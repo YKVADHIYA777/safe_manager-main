@@ -59,7 +59,7 @@ class _MyAppState extends State<MyApp> {
     final key = await secureStorage.read(key: 'key');
 
     var encryptionKey = base64Url.decode(key!);
-
+  
     Hive.registerAdapter(PasswordModelAdapter());
     Hive.registerAdapter(CardModelAdapter());
     Hive.registerAdapter(NotesModelAdapter());
