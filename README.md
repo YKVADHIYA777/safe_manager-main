@@ -1,9 +1,9 @@
 
 <div align="center">
 
-  ### <img src="https://avatars.githubusercontent.com/u/76232843?s=400&u=52234351df87372dea43a90243320f9e6a78e70c&v=4" height="100px"/> 
+  ### <img src="https://wixmp-fe53c9ff592a4da924211f23.wixmp.com/users/39aae4ab-396a-45b0-a794-965a7dda4092/design-previews/d36a7aac-b068-47dd-b215-9cc2b22ec3b0/1676367374792-thumbnail.jpeg" height="100px"/> 
 
-  ***YK DEVELOPER***
+  ***YK Solution***
 </div>
 
 <div align="center">
@@ -16,13 +16,13 @@
 <table>
     <tr>
         <th style="text-align:center">
-            <a href="https://cutt.ly/pckBg9D">
-                <img src="https://cdn.svgporn.com/logos/youtube-icon.svg" width="40">
+            <a href="https://api.whatsapp.com/send?phone=919537872816">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/640px-WhatsApp.svg.png" width="40">
             </a>
         </th>
         <th style="text-align:center">
-            <a href="https://www.instagram.com/frave_developer">
-                <img src="https://github.com/aritraroy/social-icons/blob/master/instagram-icon.png?raw=true" width="40">
+            <a href="https://www.instagram.com/yogesh_vadhiya/">
+                <img src="https://www.edigitalagency.com.au/wp-content/uploads/new-Instagram-logo-png-full-colour-glyph-1200x1199.png" width="40">
             </a>
         </th>
         <th style="text-align:center">
