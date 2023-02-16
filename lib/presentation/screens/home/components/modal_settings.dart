@@ -6,6 +6,7 @@ import 'package:safe_manager/presentation/components/components.dart';
 import 'package:safe_manager/presentation/screens/about/home_about_screen.dart';
 import 'package:safe_manager/presentation/screens/initial/initial_screen.dart';
 import 'package:safe_manager/presentation/screens/security/home_security_screen.dart';
+import 'package:safe_manager/presentation/screens/security/home_security_screen_policy.dart';
 import 'package:safe_manager/presentation/themes/themes.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -145,14 +146,12 @@ void modalSettings(BuildContext context) {
                     child: Column(
                       children: [
                         ItemModalSetting(
-                          text: 'Privacy policy',
-                          icon: FontAwesomeIcons.shield,
+                          text: 'Security',
+                          icon: FontAwesomeIcons.lock,
                           onTap: () {
                             Navigator.pop(context);
-                            launchUrl(
-                                Uri.parse(
-                                    'https://api.whatsapp.com/send?phone=919537872816'),
-                                mode: LaunchMode.externalApplication);
+                            Navigator.push(context,
+                                routeFade(page: const Privacy_Policy()));
                           },
                         ),
                       ],
