@@ -12,22 +12,22 @@ import 'package:url_launcher/url_launcher.dart';
 import 'animated_toggle_theme.dart';
 import 'item_modal_setting.dart';
 
-void modalSettings(BuildContext context) {
+void modalSettings(BuildContext context){
+
   final themesBloc = BlocProvider.of<ThemesBloc>(context);
   final authBloc = BlocProvider.of<AuthBloc>(context);
   final size = MediaQuery.of(context).size;
 
   showGeneralDialog(
     context: context,
-    barrierColor: Colors.black54,
+    barrierColor: Colors.black54, 
     transitionDuration: const Duration(milliseconds: 200),
     transitionBuilder: (context, animation, _, child) {
       return ScaleTransition(
         scale: Tween<double>(begin: 0.5, end: 1.0).animate(animation),
         child: AlertDialog(
           insetPadding: const EdgeInsets.symmetric(horizontal: 15.0),
-          shape:
-              RoundedRectangleBorder(borderRadius: BorderRadius.circular(16.0)),
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16.0)),
           content: SizedBox(
             width: size.width,
             height: size.height * .85,
@@ -38,16 +38,16 @@ void modalSettings(BuildContext context) {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       TextCustom(
-                        text: 'Settings',
-                        fontWeight: FontWeight.w600,
+                        text: 'Settings', 
+                        fontWeight: FontWeight.w600, 
                         color: Theme.of(context).primaryColor,
                       ),
                       GestureDetector(
-                          onTap: () {
-                            Navigator.pop(context);
-                          },
-                          child: const Icon(FontAwesomeIcons.xmark,
-                              color: Colors.grey))
+                        onTap: (){
+                          Navigator.pop(context);
+                        }, 
+                        child: const Icon(FontAwesomeIcons.xmark, color: Colors.grey)
+                      )
                     ],
                   ),
                   const Divider(),
@@ -58,14 +58,15 @@ void modalSettings(BuildContext context) {
                     fontSize: 15,
                   ),
                   const SizedBox(height: 10.0),
-                  BlocBuilder<ThemesBloc, ThemesState>(builder: (_, state) {
-                    return AnimatedToggleTheme(
-                      onChanged: () {
-                        themesBloc
-                            .add(ChangeThemeToOscureEvent(!state.isOscure));
-                      },
-                    );
-                  }),
+                  BlocBuilder<ThemesBloc, ThemesState>(
+                    builder: (_, state) {
+                      return AnimatedToggleTheme(
+                        onChanged: () {
+                          themesBloc.add(ChangeThemeToOscureEvent(!state.isOscure));
+                        },
+                      );
+                    }
+                  ),
                   const SizedBox(height: 15.0),
                   const TextCustom(
                     text: 'General',
@@ -76,8 +77,9 @@ void modalSettings(BuildContext context) {
                   Container(
                     padding: const EdgeInsets.all(10.0),
                     decoration: BoxDecoration(
-                        color: Theme.of(context).cardTheme.color,
-                        borderRadius: BorderRadius.circular(8.0)),
+                      color: Theme.of(context).cardTheme.color,
+                      borderRadius: BorderRadius.circular(8.0)
+                    ),
                     child: Column(
                       children: [
                         ItemModalSetting(
@@ -85,8 +87,7 @@ void modalSettings(BuildContext context) {
                           icon: FontAwesomeIcons.lock,
                           onTap: () {
                             Navigator.pop(context);
-                            Navigator.push(context,
-                                routeFade(page: const HomeSecurityScreen()));
+                            Navigator.push(context, routeFade(page: const HomeSecurityScreen()));
                           },
                         ),
                         const Divider(),
@@ -95,8 +96,7 @@ void modalSettings(BuildContext context) {
                           icon: FontAwesomeIcons.faceSmile,
                           onTap: () {
                             Navigator.pop(context);
-                            Navigator.push(context,
-                                routeFade(page: const HomeAboutScreen()));
+                            Navigator.push(context, routeFade(page: const HomeAboutScreen()));
                           },
                         ),
                       ],
@@ -112,19 +112,17 @@ void modalSettings(BuildContext context) {
                   Container(
                     padding: const EdgeInsets.all(10.0),
                     decoration: BoxDecoration(
-                        color: Theme.of(context).cardTheme.color,
-                        borderRadius: BorderRadius.circular(8.0)),
+                      color: Theme.of(context).cardTheme.color,
+                      borderRadius: BorderRadius.circular(8.0)
+                    ),
                     child: Column(
                       children: [
                         ItemModalSetting(
-                          text: 'Developer Contect',
+                          text: 'Contact me',
                           icon: FontAwesomeIcons.envelope,
                           onTap: () {
                             Navigator.pop(context);
-                            launchUrl(
-                                Uri.parse(
-                                    'https://api.whatsapp.com/send?phone=919537872816'),
-                                mode: LaunchMode.externalApplication);
+                            launchUrl(Uri.parse('https://www.instagram.com/frave_developer'), mode: LaunchMode.externalApplication);
                           },
                         ),
                       ],
@@ -140,41 +138,24 @@ void modalSettings(BuildContext context) {
                   Container(
                     padding: const EdgeInsets.all(10.0),
                     decoration: BoxDecoration(
-                        color: Theme.of(context).cardTheme.color,
-                        borderRadius: BorderRadius.circular(8.0)),
+                      color: Theme.of(context).cardTheme.color,
+                      borderRadius: BorderRadius.circular(8.0)
+                    ),
                     child: Column(
                       children: [
                         ItemModalSetting(
                           text: 'Privacy policy',
                           icon: FontAwesomeIcons.shield,
                           onTap: () {
-                            Navigator.pop(context);
-                            launchUrl(
-                                Uri.parse(
-                                    'https://api.whatsapp.com/send?phone=919537872816'),
-                                mode: LaunchMode.externalApplication);
+                            
                           },
                         ),
-                      ],
-                    ),
-                  ),
-                  const SizedBox(height: 10.0),
-                  Container(
-                    padding: const EdgeInsets.all(10.0),
-                    decoration: BoxDecoration(
-                        color: Theme.of(context).cardTheme.color,
-                        borderRadius: BorderRadius.circular(8.0)),
-                    child: Column(
-                      children: [
+                        const Divider(),
                         ItemModalSetting(
                           text: 'Terms of services',
                           icon: FontAwesomeIcons.bookmark,
                           onTap: () {
-                            Navigator.pop(context);
-                            launchUrl(
-                                Uri.parse(
-                                    'https://api.whatsapp.com/send?phone=919537872816'),
-                                mode: LaunchMode.externalApplication);
+                            
                           },
                         ),
                         const Divider(),
@@ -192,19 +173,18 @@ void modalSettings(BuildContext context) {
                     borderRadius: BorderRadius.circular(8.0),
                     onTap: () {
                       authBloc.add(VerifyAccountEvent());
-                      Navigator.pushAndRemoveUntil(context,
-                          routeFade(page: const InitialScreen()), (_) => false);
+                      Navigator.pushAndRemoveUntil(context, routeFade(page: const InitialScreen()), (_) => false);
                     },
                     child: Container(
                       padding: const EdgeInsets.symmetric(vertical: 12),
                       decoration: BoxDecoration(
-                          color: Theme.of(context).cardTheme.color,
-                          borderRadius: BorderRadius.circular(8.0)),
+                        color: Theme.of(context).cardTheme.color,
+                        borderRadius: BorderRadius.circular(8.0)
+                      ),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: const [
-                          Icon(FontAwesomeIcons.arrowRightFromBracket,
-                              color: ColorsFrave.redLogOut, size: 20),
+                          Icon(FontAwesomeIcons.arrowRightFromBracket, color: ColorsFrave.redLogOut, size: 20),
                           SizedBox(width: 10.0),
                           TextCustom(
                             text: 'Log out',

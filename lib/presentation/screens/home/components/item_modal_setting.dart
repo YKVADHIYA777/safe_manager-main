@@ -14,7 +14,7 @@ class ItemModalSetting extends StatelessWidget {
     required this.text, 
     required this.icon, 
     required this.onTap,
-    this.isVersion = false,
+    this.isVersion = false, required RoundedRectangleBorder shape,
   }) : super(key: key);
 
   @override
