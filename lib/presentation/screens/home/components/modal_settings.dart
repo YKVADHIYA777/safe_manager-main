@@ -5,6 +5,7 @@ import 'package:safe_manager/domain/blocs/blocs.dart';
 import 'package:safe_manager/presentation/components/components.dart';
 import 'package:safe_manager/presentation/screens/about/home_about_screen.dart';
 import 'package:safe_manager/presentation/screens/initial/initial_screen.dart';
+import 'package:safe_manager/presentation/screens/security/components/dialogs/Policy_dialog.dart';
 import 'package:safe_manager/presentation/screens/security/home_security_screen.dart';
 import 'package:safe_manager/presentation/screens/security/home_security_screen_policy.dart';
 import 'package:safe_manager/presentation/themes/themes.dart';
@@ -150,8 +151,16 @@ void modalSettings(BuildContext context) {
                           icon: FontAwesomeIcons.lock,
                           onTap: () {
                             Navigator.pop(context);
+<<<<<<< HEAD
                             Navigator.push(context,
                                 routeFade(page: const Privacy_Policy()));
+=======
+                            Navigator.push(
+                                context,
+                                // routeFade(page: const PolicyDialog()));
+
+                                routeFade(page: const HomeAboutScreen()));
+>>>>>>> 934c968924339ba820a325f421da720424daf7a7
                           },
                         ),
                       ],
